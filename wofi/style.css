@@ -1,40 +1,80 @@
-* {
-    font-family: "JetBrainsMono Nerd Font";
-    color: rgba(53, 185, 171, 1);
-    background: transparent;
-}
+/* Wofi style: centered, rounded, elevated, clean and minimal (Raycast-like) */
 
 #window {
-    background: rgba(41, 46, 66, 0.5);
-    margin: auto;
-    padding: 10px;
-    border-radius: 20px;
-    border: 5px solid #33ccff;
+  background-color: rgba(18, 20, 24, 0.96);
+  border-radius: 14px;
+  margin: 0;
+  padding: 12px;
+  -gtk-icon-transform: none;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
-#input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-}
-
+/* Outer container spacing */
 #outer-box {
-    padding: 20px;
+  padding: 8px;
+  spacing: 8px;
 }
 
+/* Search input */
+#input {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 18px;
+  min-height: 46px;
+  color: #e6eef6;
+}
+
+/* Hide the minor search decoration if you want a cleaner look */
+#input .search-icon {
+  margin-left: 6px;
+  margin-right: 8px;
+}
+
+/* Result list area */
+#scroll {
+  margin-top: 6px;
+  max-height: 340px;
+  min-height: 120px;
+}
+
+/* Each entry row */
+#inner-box .entry {
+  padding: 10px 8px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  -gtk-icon-size: 20px;
+}
+
+/* Image/icon in each row */
 #img {
-    margin-right: 6px;
+  min-width: 28px;
+  min-height: 28px;
+  margin-right: 12px;
+  border-radius: 6px;
 }
 
-#entry {
-    padding: 10px;
-    border-radius: 15px;
-}
-
-#entry:selected {
-    background-color: #2e3440;
-}
-
+/* Text styling */
 #text {
-    margin: 2px;
+  font-size: 15px;
+  color: #cfe6ff;
+}
+
+/* Selected entry (hover / keyboard) */
+#inner-box .entry:selected,
+#inner-box .entry:checked {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+/* Secondary (subtitle) text — e.g., command path */
+#text.secondary {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+
+/* Remove default focus outline for a smoother look */
+*:focus {
+  outline: none;
 }

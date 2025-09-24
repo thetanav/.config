@@ -1,11 +1,30 @@
+# Basic behavior
 show=drun
-width=750
-height=400
-always_parse_args=true
-show_all=false
-term=kitty
+close_on_focus_loss=true        # auto-close when clicking outside / focus lost
+single_click=true               # execute actions on single click (Raycast-like)
+allow_images=true               # show icons
+image_size=28                   # icon size in px
+display_generic=false
+allow_markup=true
+print_command=false
+
+# Appearance / placement
+location=center                 # center the window
+layer=overlay                   # overlay layer
+width=720
+height=480
+lines=10
+dynamic_lines=false
+line_wrap=word
+gtk_dark=true
+prompt=Finder
+
+# Terminal for apps that request a terminal
+term=ghostty
+
+# Misc
 hide_scroll=true
-print_command=true
-insensitive=true
-prompt=
-columns=2
+show_all=true
+always_parse_args=false
+key_expand=Tab
+insensitive=false
