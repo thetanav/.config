@@ -1,112 +1,149 @@
-/* Reset all elements */
-#window,
-#outer-box,
-#input,
-#scroll,
-#inner-box,
-.entry,
-#text,
-#img {
-    all: unset;
-}
-
+/* Raycast-style Wofi Theme with Rose Pine Dark */
 * {
-    font-family: Inter;
-    font-size: 18px;
+    font-family:
+        -apple-system,
+        SF Pro Display,
+        Inter,
+        system-ui,
+        sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-/* Window */
 #window {
     background: transparent;
-    color: #cfc9c2;
+    margin: 0;
+    padding: 0;
 }
 
-/* Main box container */
 #outer-box {
-    background: rgba(26, 27, 38, 0.95);
-    padding: 20px;
-    border: 2px solid #33ccff;
-    border-radius: 0px;
-    min-width: 664px;
-    max-width: 664px;
-    width: 664px;
-    min-height: 396px;
-    max-height: 396px;
-    height: 396px;
+    background: rgba(25, 23, 36, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(49, 116, 143, 0.2);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(156, 207, 216, 0.1);
+    padding: 16px;
+    margin: 0;
+    min-width: 640px;
+    max-width: 640px;
 }
 
-/* Input field (search) */
 #input {
-    background: #1a1b26;
-    color: #cfc9c2;
-    padding: 10px;
-    margin-bottom: 0;
-    border: none;
+    background: rgba(35, 33, 54, 0.8);
+    border: 1px solid rgba(49, 116, 143, 0.3);
+    border-radius: 12px;
+    color: #e0def4;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+#input:focus {
+    border-color: rgba(156, 207, 216, 0.5);
+    box-shadow:
+        0 0 0 4px rgba(156, 207, 216, 0.2),
+        0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 #input placeholder {
-    opacity: 0.5;
-    color: #cfc9c2;
+    color: rgba(144, 140, 170, 0.7);
+    font-weight: 400;
 }
 
-/* List container */
 #scroll {
+    margin-top: 4px;
     background: transparent;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
 }
 
 #inner-box {
     background: transparent;
 }
 
-/* List items */
 .entry {
-    padding: 0px 12px;
     background: transparent;
-    border-radius: 0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 2px 0;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
 }
 
-.entry:selected,
 .entry:hover {
-    background: transparent;
+    background: rgba(49, 116, 143, 0.15);
+    border-color: rgba(49, 116, 143, 0.25);
 }
 
 .entry:selected {
-    font-style: italic;
+    background: rgba(156, 207, 216, 0.12);
+    border-color: rgba(156, 207, 216, 0.3);
+    box-shadow: 0 2px 8px rgba(156, 207, 216, 0.15);
 }
 
-/* Icon */
 #img {
-    margin-right: 10px;
-    min-width: 40px;
-    min-height: 40px;
-    max-width: 40px;
-    max-height: 40px;
+    margin-right: 14px;
+    border-radius: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
 }
 
-/* Text */
 #text {
-    color: #cfc9c2;
-    padding: 14px 0;
-    font-weight: normal;
+    color: #e0def4;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    vertical-align: middle;
 }
 
-/* Selected state */
-.entry:selected #text,
-.entry:hover #text {
-    color: #7dcfff;
+.entry:hover #text,
+.entry:selected #text {
+    color: #e0def4;
 }
 
-/* Hide scrollbar */
-scrollbar {
-    opacity: 0;
-}
-
-/* Secondary text styling */
 #text.secondary {
-    opacity: 0;
-    font-size: 0;
-    min-height: 0;
+    color: rgba(144, 140, 170, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 2px;
+    line-height: 1.3;
+}
+
+.entry:hover #text.secondary,
+.entry:selected #text.secondary {
+    color: rgba(156, 207, 216, 0.9);
+}
+
+scrollbar {
+    background: transparent;
+    width: 6px;
+}
+
+scrollbar slider {
+    background: rgba(49, 116, 143, 0.3);
+    border-radius: 3px;
+    min-height: 20px;
+}
+
+scrollbar slider:hover {
+    background: rgba(49, 116, 143, 0.5);
+}
+
+/* Additional Rose Pine accent colors for variety */
+.entry[data-category="applications"] {
+    border-left: 2px solid transparent;
+}
+
+.entry[data-category="applications"]:hover {
+    border-left-color: rgba(235, 188, 186, 0.6);
+}
+
+.entry[data-category="applications"]:selected {
+    border-left-color: rgba(235, 188, 186, 0.8);
 }

@@ -3,7 +3,7 @@ show=drun
 close_on_focus_loss=true
 single_click=true
 allow_images=true
-image_size=40                   # match walker icon pixel_size
+image_size=32
 display_generic=false
 allow_markup=true
 print_command=false
@@ -11,21 +11,22 @@ print_command=false
 # Appearance / placement
 location=center
 layer=overlay
-width=664                       # match walker dimensions exactly
-height=396
+width=640
+height=400
 lines=4
-dynamic_lines=false
+dynamic_lines=true
 line_wrap=word
 gtk_dark=true
-prompt=Search...
+prompt=
 
 # Terminal for apps that request a terminal
 term=ghostty
 
 # Misc
-hide_scroll=true                # hide scrollbar like walker
+hide_scroll=false
 show_all=true
 always_parse_args=false
 key_expand=Tab
-insensitive=false
-no_actions=true                 # cleaner interface
+insensitive=true
+no_actions=false
+matching=fuzzy
