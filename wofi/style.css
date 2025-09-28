@@ -1,80 +1,112 @@
-/* Wofi style: centered, rounded, elevated, clean and minimal (Raycast-like) */
-
-#window {
-  background-color: rgba(18, 20, 24, 0.96);
-  border-radius: 14px;
-  margin: 0;
-  padding: 12px;
-  -gtk-icon-transform: none;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Outer container spacing */
-#outer-box {
-  padding: 8px;
-  spacing: 8px;
-}
-
-/* Search input */
-#input {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 18px;
-  min-height: 46px;
-  color: #e6eef6;
-}
-
-/* Hide the minor search decoration if you want a cleaner look */
-#input .search-icon {
-  margin-left: 6px;
-  margin-right: 8px;
-}
-
-/* Result list area */
-#scroll {
-  margin-top: 6px;
-  max-height: 340px;
-  min-height: 120px;
-}
-
-/* Each entry row */
-#inner-box .entry {
-  padding: 10px 8px;
-  border-radius: 8px;
-  margin-bottom: 4px;
-  -gtk-icon-size: 20px;
-}
-
-/* Image/icon in each row */
+/* Reset all elements */
+#window,
+#outer-box,
+#input,
+#scroll,
+#inner-box,
+.entry,
+#text,
 #img {
-  min-width: 28px;
-  min-height: 28px;
-  margin-right: 12px;
-  border-radius: 6px;
+    all: unset;
 }
 
-/* Text styling */
+* {
+    font-family: Inter;
+    font-size: 18px;
+}
+
+/* Window */
+#window {
+    background: transparent;
+    color: #cfc9c2;
+}
+
+/* Main box container */
+#outer-box {
+    background: rgba(26, 27, 38, 0.95);
+    padding: 20px;
+    border: 2px solid #33ccff;
+    border-radius: 0px;
+    min-width: 664px;
+    max-width: 664px;
+    width: 664px;
+    min-height: 396px;
+    max-height: 396px;
+    height: 396px;
+}
+
+/* Input field (search) */
+#input {
+    background: #1a1b26;
+    color: #cfc9c2;
+    padding: 10px;
+    margin-bottom: 0;
+    border: none;
+}
+
+#input placeholder {
+    opacity: 0.5;
+    color: #cfc9c2;
+}
+
+/* List container */
+#scroll {
+    background: transparent;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+#inner-box {
+    background: transparent;
+}
+
+/* List items */
+.entry {
+    padding: 0px 12px;
+    background: transparent;
+    border-radius: 0;
+}
+
+.entry:selected,
+.entry:hover {
+    background: transparent;
+}
+
+.entry:selected {
+    font-style: italic;
+}
+
+/* Icon */
+#img {
+    margin-right: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* Text */
 #text {
-  font-size: 15px;
-  color: #cfe6ff;
+    color: #cfc9c2;
+    padding: 14px 0;
+    font-weight: normal;
 }
 
-/* Selected entry (hover / keyboard) */
-#inner-box .entry:selected,
-#inner-box .entry:checked {
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+/* Selected state */
+.entry:selected #text,
+.entry:hover #text {
+    color: #7dcfff;
 }
 
-/* Secondary (subtitle) text — e.g., command path */
+/* Hide scrollbar */
+scrollbar {
+    opacity: 0;
+}
+
+/* Secondary text styling */
 #text.secondary {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
-  margin-top: 2px;
-}
-
-/* Remove default focus outline for a smoother look */
-*:focus {
-  outline: none;
+    opacity: 0;
+    font-size: 0;
+    min-height: 0;
 }
