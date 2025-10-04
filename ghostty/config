@@ -8,4 +8,4 @@ link-url = true
 window-decoration = none
 keybind = ctrl+d=new_split:right
 keybind = ctrl+z=close_surface
-background-opacity = 0.9
+background-opacity = 0.97

@@ -9,6 +9,6 @@ else
 fi
 
 # Run git commands
-git add ghostty zed nvim tmux wofi zed zsh htop push.sh
+git add ghostty zed nvim tmux wofi zed zsh htop ripgrep push.sh
 git commit -m "$COMMIT_MSG"
 git push

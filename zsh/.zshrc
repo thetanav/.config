@@ -57,6 +57,3 @@ bindkey '^Xe' edit-command-line
 export HISTIGNORE='exit:cd:ls:bg:fg:history:f:fd:vim'
 
 MAILSYNC_MUTE=1
-
-# Load zsh-syntax-highlighting; should be last.
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
